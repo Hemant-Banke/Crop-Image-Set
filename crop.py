@@ -25,7 +25,8 @@ for file_name in [ f for f in os.listdir(SOURCE_DIR) if os.path.isfile(SOURCE_DI
     if not os.path.exists( DEST_DIR ):
         os.makedirs( DEST_DIR )
 
-    crop_img.save( DEST_DIR + file_name )
+    if not os.path.isfile( DEST_DIR + file_name ):
+        crop_img.save( DEST_DIR + file_name )
 
 
 
